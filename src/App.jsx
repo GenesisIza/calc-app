@@ -1,10 +1,10 @@
 //importacion.
 import React from 'react'
-import Result from './components/Result';
-import Button from "./components/Button";
+import Button from "./components/Button"
+import Functions from './components/Functions';
+import MathOperations from "./components/MathOperations";
+import Result from './components/Result'
 import './App.css' //asi se importan los estilos 
-import MathOperations from './components/MathOperations';
-
 
 //generacion de la funcion del componente.
 const App = () => {//tiene que corresponder con el nombre del archivo.//funcion tipo flecha 
@@ -29,17 +29,26 @@ const clickHandlerFunction = text => {
           <button>9</button>
           <button>0</button>
         </div>
-        <div className="functions">
-          <button>clear</button>
-          <button>r</button>
-        </div>
-        <div className="math-operations">
-          <MathOperations text="+"/>
-          <button>-</button>
-          <button>*</button>
-          <button>/</button>
-          <button>=</button>
-        </div>
+        <Functions
+          onDelete={
+            () =>
+              console.log("eliminar")
+          } 
+          onContentClear = {
+            () =>
+            console.log("limpiar")
+          }
+        />
+        <MathOperations
+          onClickOperation= {
+              operacion => 
+                 console.log("Operation:", operacion)
+            }
+          onClickEqual = {
+                equal =>
+                console.log("Equal:", equal)
+            }
+        />
       </main>
     );//si son mas lineas debe ir entre parentesis
 }
