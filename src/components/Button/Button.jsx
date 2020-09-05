@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types"
-
+import './button.css'
+//type = button-long-text 
 const Button = ({text, type, clickHandler}) => 
     (
-      <button className={type } onClick={() => clickHandler(text)}> 
+      <button className={ type } onClick={() => clickHandler(text)}> 
         <span>{text}</span>
       </button>
     )
